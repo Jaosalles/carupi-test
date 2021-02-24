@@ -17,6 +17,7 @@ export enum GamesTypes {
 export interface GamesList {
   id: string;
   name: string;
+  slug: string;
   background_image: string;
   rating: string;
 }
@@ -24,6 +25,8 @@ export interface GamesList {
 export interface GamesInfo {
   id: string;
   name: string;
+  description_raw: string;
+  image: string;
 }
 
 export interface Games {

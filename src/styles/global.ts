@@ -115,47 +115,6 @@ export default createGlobalStyle`
       }
     }
   }
- 
-  .ulPaginate {
-    list-style: none;
-    display: flex;
-    margin: 15px 0 0;
-    padding: 5px 0;
-  }
-  .ulPaginate li {
-    border: 1px solid ${colors.primary};
-    border-collapse: collapse;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: ${colors.primary};
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    & a {
-      display: block;
-    }
-    &.previous {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      font-size: 17px;
-    }
-    &.next {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      font-size: 17px;
-    }
-    :hover {
-      background: ${colors.primary};
-      color: ${colors.white};
-    }
-    &.active {
-      background: ${colors.primary};
-      color: ${colors.white};
-    }
-  }
 
   .Toastify__toast-container {
     width: 400px !important;
@@ -192,25 +151,6 @@ export default createGlobalStyle`
     }
     100% {
       transform: scale(1.1, 1.1, 1.1);
-    }
-  }
-
-
-  @keyframes openDrawer {
-    from {
-      transform: translateX(-250px);
-    }
-    to {
-      transform: translateX(0px);
-    }
-  }
-
-  @keyframes closeDrawer {
-    from {
-      transform: translateX(0px);
-    }
-    to {
-      transform: translateX(-250px);
     }
   }
 `;

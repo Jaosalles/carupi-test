@@ -12,6 +12,8 @@ const INITIAL_STATE: GamesState = {
     info: {
       id: '',
       name: '',
+      description_raw: '',
+      image: '',
     },
   },
 };
@@ -34,9 +36,24 @@ const user: Reducer<GamesState> = (state = INITIAL_STATE, action) => {
         draft.data.previous = previous;
       });
 
+    case GamesTypes.SHOW_REQUEST:
+      return produce(state, (draft: Draft<GamesState>) => {
+        draft.data.info.id = '';
+        draft.data.info.name = '';
+        draft.data.info.description_raw = '';
+        draft.data.info.image = '';
+      });
+
     case GamesTypes.SHOW_SUCCESS:
       return produce(state, (draft: Draft<GamesState>) => {
-        draft.data.info = action.payload.data;
+        const { data } = action.payload;
+
+        const dataFormatted = {
+          ...data,
+          image: data.background_image,
+        };
+
+        draft.data.info = dataFormatted;
       });
 
     default:
